@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<form [formGroup]="form">
+  <div class="grid p-">
+    <div class="col-6 md:col-4">
+      <div class="p-inputgroup p-m-4">
+        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+        <input type="text" pInputText placeholder="Nombre" formControlName="nombre"/>
+      </div>
+    </div>
+
+    <div class="col-6 md:col-4">
+      <div class="p-inputgroup p-m-4">
+        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+        <input type="text" pInputText placeholder="Apellido" formControlName="apellido"/>
+      </div>
+    </div>
+
+    <div class="col-6 md:col-4">
+      <div class="p-inputgroup p-m-4">
+        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+        <input type="text" pInputText placeholder="Correo" formControlName="correo"/>
+      </div>
+    </div>
+  </div>
+  <div class="p-inputgroup p-m-6">
+    <button pButton type="button" class="p-button-raised" label="Crear" (click)="crearCliente()"></button>
+  </div>
+</form>
+
+<p-table [value]="clientes" [tableStyle]="{'min-width': '50rem'}">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Id Cliente</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Correo</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-clientes>
+      <tr>
+          <td>{{clientes.Id}}</td>
+          <td>{{clientes.Nombre}}</td>
+          <td>{{clientes.Apellido}}</td>
+          <td>{{clientes.Correo}}</td>
+          <td><button pButton type="button" icon="pi-user-edit" class="p-button-rounded"></button></td>
+          <td><button pButton type="button" icon="pi pi-times" class="p-button-rounded" (click)="borrarCliente(clientes.Id)"></button></td>
+      </tr>
+  </ng-template>
+</p-table>
