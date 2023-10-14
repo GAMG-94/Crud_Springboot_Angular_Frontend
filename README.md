@@ -1,5 +1,7 @@
 # SpringbootCrud
 
+![image](https://github.com/GAMG-94/Crud_Springboot_Angular_Frontend/assets/63872158/0956e6c8-46f4-4ffb-826d-f996d3486705)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
 
 ## Development server
